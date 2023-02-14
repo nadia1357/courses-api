@@ -1,13 +1,10 @@
 import React from 'react';
+import './Logo.css';
 
-function Logo() {
+const Logo = () => {
 	return (
-		<img
-			className='Logo'
-			src='url(/src/assets/img/Logo-react-header.png)'
-			alt='logo'
-		/>
+		<img className='Logo' src='assets/img/Logo-react-header.png' alt='logo' />
 	);
-}
+};
 
 export { Logo };

@@ -1,0 +1,14 @@
+header {
+    border: solid 2px deeppink;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.userNameAndLogout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

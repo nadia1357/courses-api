@@ -1,13 +1,18 @@
 import React from 'react';
-import { Logo } from 'components/Logo/Logo.jsx';
-import { Button } from 'src/commom/Button/Button.jsx';
+import './Header.css';
+import { Logo } from './components/Logo/Logo.jsx';
+import { Button } from '../../common/Button/Button.jsx';
 
 const Header = () => {
-	<header>
-		<Logo />
-		<p>User Name</p>
-		<Button />
-	</header>;
+	return (
+		<header>
+			<Logo />
+			<div className='userNameAndLogout'>
+				<p>User Name</p>
+				<Button />
+			</div>
+		</header>
+	);
 };
 
 export { Header };

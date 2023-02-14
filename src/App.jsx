@@ -1,8 +1,13 @@
 /* eslint-disable prettier/prettier */
 import './App.css';
+import { Header } from './components/Header/Header.jsx';
 
 function App() {
-  return <div>React</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
