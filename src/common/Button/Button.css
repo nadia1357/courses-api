@@ -1,4 +1,9 @@
-Button {
-    padding: 5px;
-    border: solid 2px purple;
+button {
+    padding: 5px auto;
+    border: solid 1px purple;
+    border-radius: 2px;
+    width: 140px;
+    height: 2rem;
+    font-size: 1rem;
+    margin: auto 20px;
 }

@@ -2,14 +2,15 @@ import React from 'react';
 import './Header.css';
 import { Logo } from './components/Logo/Logo.jsx';
 import { Button } from '../../common/Button/Button.jsx';
+import { BUTTON_TEXT } from '../../constants';
 
 const Header = () => {
 	return (
-		<header>
+		<header className='header'>
 			<Logo />
 			<div className='userNameAndLogout'>
-				<p>User Name</p>
-				<Button />
+				<div className='userName'>User Name</div>
+				<Button text={BUTTON_TEXT.logout} />
 			</div>
 		</header>
 	);

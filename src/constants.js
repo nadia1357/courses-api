@@ -1,4 +1,4 @@
-const mockedCoursesList = [
+const MOCKED_COURSES_LIST = [
 	{
 		id: 'de5aaa59-90f5-4dbc-b8a9-aaf205c551ba',
 		title: 'JavaScript',
@@ -23,7 +23,7 @@ const mockedCoursesList = [
 	},
 ];
 
-const mockedAuthorsList = [
+const MOCKED_AUTHORS_LIST = [
 	{
 		id: '27cc3006-e93a-4748-8ca8-73d06aa93b6d',
 		name: 'Vasiliy Dobkin',
@@ -42,4 +42,22 @@ const mockedAuthorsList = [
 	},
 ];
 
-export { mockedCoursesList, mockedAuthorsList };
+const BUTTON_TEXT = {
+	logout: 'Logout',
+	search: 'Search',
+	addNewCourse: 'Add new course',
+	showCourse: 'Show course',
+	createCourse: 'Create course',
+	createAuthor: 'Create author',
+	addAuthor: 'Add author',
+};
+
+const INPUT_TEXT = {
+	enterCourseName: 'Enter course name or id...',
+	enterTitle: 'Enter title...',
+	enterDescription: 'Enter description',
+	enterAuthorName: 'Enter author name...',
+	enterDuration: 'Enter duration in minutes...',
+};
+
+export { MOCKED_COURSES_LIST, MOCKED_AUTHORS_LIST, BUTTON_TEXT, INPUT_TEXT };

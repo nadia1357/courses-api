@@ -12,3 +12,8 @@ header {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.userName {
+    margin: 10px 20px;
+    font-size: 1.3rem;
+}
