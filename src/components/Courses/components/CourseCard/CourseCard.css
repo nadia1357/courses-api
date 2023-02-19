@@ -1,0 +1,28 @@
+.coursecard {
+    border: solid 2px aquamarine;
+}
+
+.courseInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h3 {
+    margin: 10px auto;
+}
+
+Button {
+    margin: 5px auto;
+}
+
+p {
+    margin: 5px, auto;
+}
+
+.overflow-ellipsis {
+    width: 30em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
