@@ -1,11 +1,13 @@
-.coursecard {
+.courseCard {
     border: solid 2px aquamarine;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .courseInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 60%;
 }
 
 h3 {

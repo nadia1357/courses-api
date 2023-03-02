@@ -6,10 +6,10 @@ import { Button } from '../../../../common/Button/Button';
 
 const SearchBar = () => {
 	return (
-		<SearchBar>
+		<div>
 			<Input></Input>
 			<Button text={BUTTON_TEXT.search} />
-		</SearchBar>
+		</div>
 	);
 };
 export { SearchBar };

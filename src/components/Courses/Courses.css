@@ -1,0 +1,9 @@
+.courses {
+    border: solid 2px lightskyblue;
+}
+
+.searchNewCourse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
