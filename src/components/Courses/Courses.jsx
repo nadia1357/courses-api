@@ -26,13 +26,15 @@ for (let i = 0; i < MOCKED_COURSES_LIST.length; i++) {
 
 const Courses = () => {
 	return (
-		<div class='courses'>
-			<div class='searchNewCourse'>
+		<div className='courses'>
+			<div className='searchNewCourse'>
 				<SearchBar />
-				<Button text={BUTTON_TEXT.addNewCourse} />
+				<div>
+					<Button text={BUTTON_TEXT.addNewCourse} />
+				</div>
 			</div>
 
-			<ul>
+			<ul className='coursesCards'>
 				{courses.map((course) => (
 					<li key={course.id}>
 						<CourseCard course={course} />

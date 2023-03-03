@@ -13,7 +13,7 @@ const CourseCard = ({ course }) => {
 			</div>
 
 			<div className='courseInfo'>
-				<p class='overflow-ellipsis'>
+				<p className='overflow-ellipsis'>
 					<b>{COURSE_CARD_MODEL.authors}: </b>
 					<span>{course.authorsInString}</span>
 				</p>

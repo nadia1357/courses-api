@@ -1,7 +1,7 @@
 header {
     border: solid 2px deeppink;
     margin: 20px;
-    padding: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

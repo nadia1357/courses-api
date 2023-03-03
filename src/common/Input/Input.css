@@ -1,0 +1,8 @@
+input {
+    width: 400px;
+    height: 2.2rem;
+    padding: 0 30px;
+    margin: 0;
+    font-size: 1rem;
+    border: solid 1px goldenRod;
+}

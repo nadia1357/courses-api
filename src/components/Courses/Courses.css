@@ -1,9 +1,31 @@
 .courses {
     border: solid 2px lightskyblue;
+    padding: 20px;
+    margin: 20px;
 }
 
 .searchNewCourse {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 10px;
+    padding: 0;
 }
+
+.coursesCards {
+    margin: 10px;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
