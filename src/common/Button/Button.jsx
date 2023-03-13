@@ -1,6 +1,10 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
+const Button = ({ text, onClick }) => (
+	<button type='submit' onClick={onClick}>
+		{text}
+	</button>
+);
 
 export { Button };
