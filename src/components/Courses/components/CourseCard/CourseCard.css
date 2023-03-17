@@ -17,16 +17,12 @@
     justify-content: center;
 }
 
-h3 {
+.courseCardH3 {
     margin: 10px auto;
 }
 
-p {
+.courseCardP {
     margin-top: 0;
-}
-
-Button {
-    margin: 5px auto;
 }
 
 .overflow-ellipsis {
@@ -34,4 +30,8 @@ Button {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.courseInfo .Btn {
+    margin: 10px auto 0;
 }

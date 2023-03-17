@@ -13,8 +13,10 @@ const SearchBar = ({ onChangeSearch }) => {
 	return (
 		<div className='searchBar'>
 			<Input
+				id={''}
+				aria-label={INPUT_TEXT.enterCourseName}
 				placeholderText={INPUT_TEXT.enterCourseName}
-				labelText={INPUT_TEXT.enterCourseName}
+				labelText={''}
 				onChangeInput={onChangeInput}
 			></Input>
 			<Button

@@ -10,7 +10,7 @@ const Header = () => {
 			<Logo />
 			<div className='userNameAndLogout'>
 				<div className='userName'>User Name</div>
-				<Button text={BUTTON_TEXT.logout} />
+				<Button className='logoutBtn' text={BUTTON_TEXT.logout} />
 			</div>
 		</header>
 	);

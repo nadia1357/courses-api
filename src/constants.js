@@ -50,6 +50,7 @@ const BUTTON_TEXT = {
 	createCourse: 'Create course',
 	createAuthor: 'Create author',
 	addAuthor: 'Add author',
+	deleteAuthor: 'Delete author',
 };
 
 const INPUT_TEXT = {
@@ -58,6 +59,17 @@ const INPUT_TEXT = {
 	enterDescription: 'Enter description',
 	enterAuthorName: 'Enter author name...',
 	enterDuration: 'Enter duration in minutes...',
+};
+
+const CREATE_COURSE_MODEL = {
+	title: 'Title',
+	description: 'Description',
+	addAuthor: 'Add author',
+	authorName: 'Author name',
+	authors: 'Authors',
+	duration: 'Duration',
+	courseAuthors: 'Course authors',
+	authorsListEmpty: 'Authors list is empty',
 };
 
 const COURSE_CARD_MODEL = {
@@ -71,5 +83,6 @@ export {
 	MOCKED_AUTHORS_LIST,
 	BUTTON_TEXT,
 	INPUT_TEXT,
+	CREATE_COURSE_MODEL,
 	COURSE_CARD_MODEL,
 };

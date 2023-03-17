@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Courses.css';
 
 import {
@@ -25,6 +27,7 @@ for (let i = 0; i < MOCKED_COURSES_LIST.length; i++) {
 }
 
 const Courses = () => {
+	const navigate = useNavigate();
 	const [choosenCourses, setChoosenCourses] = useState(allCourses);
 
 	const showChoosenCourses = (choosenCourses) => {
@@ -32,7 +35,6 @@ const Courses = () => {
 	};
 
 	const onChangeSearch = (searchValue) => {
-		console.log(searchValue);
 		let searchedCourses = allCourses;
 		if (searchValue !== '') {
 			searchedCourses = searchedCourses.filter(
@@ -41,7 +43,6 @@ const Courses = () => {
 					x.id.toLowerCase().includes(searchValue.toLowerCase())
 			);
 		}
-		console.log(searchedCourses);
 		showChoosenCourses(searchedCourses);
 	};
 
@@ -50,7 +51,10 @@ const Courses = () => {
 			<div className='searchNewCourse'>
 				<SearchBar onChangeSearch={onChangeSearch} />
 				<div>
-					<Button text={BUTTON_TEXT.addNewCourse} />
+					<Button
+						text={BUTTON_TEXT.addNewCourse}
+						onClick={() => navigate('create-course')}
+					/>
 				</div>
 			</div>
 

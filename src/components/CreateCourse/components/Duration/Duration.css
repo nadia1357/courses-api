@@ -1,0 +1,11 @@
+.durationBlock {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.duration {
+    text-align: left;
+    margin-bottom: 20px;
+}
