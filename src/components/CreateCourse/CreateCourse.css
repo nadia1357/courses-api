@@ -36,12 +36,17 @@
     border: solid 1px black;
     display: flex; 
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     padding: 0 20px;
 }
 
 .addAuthorAndDuration {
+    margin-right: 30px;
     display: flex; 
     flex-direction: column;
     justify-content: space-between; 
+}
+
+.allAuthors {
+    width: 45%;
 }

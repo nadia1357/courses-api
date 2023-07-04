@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './CourseCard.css';
 import { BUTTON_TEXT, COURSE_CARD_MODEL } from '../../../../constants';
 import { Button } from '../../../../common/Button/Button';
 
 const CourseCard = ({ course }) => {
+	const navigate = useNavigate();
 	const hour = 60;
 	return (
 		<div className='courseCard'>
@@ -12,7 +15,7 @@ const CourseCard = ({ course }) => {
 				<p className='courseCardP'>{course.description}</p>
 			</div>
 
-			<div className='courseInfo'>
+			<div className='aboutCourse'>
 				<p className='overflow-ellipsis courseCardP'>
 					<b>{COURSE_CARD_MODEL.authors}: </b>
 					<span>{course.authorsInString}</span>
@@ -30,7 +33,10 @@ const CourseCard = ({ course }) => {
 					<span>{course.creationDate}</span>
 				</p>
 
-				<Button text={BUTTON_TEXT.showCourse} />
+				<Button
+					text={BUTTON_TEXT.showCourse}
+					onClick={() => navigate(`${course.id}`)}
+				/>
 			</div>
 		</div>
 	);

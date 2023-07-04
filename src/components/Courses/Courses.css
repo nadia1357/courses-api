@@ -17,12 +17,12 @@
 }
 
 
-ul {
+.coursesCards {
     margin: 0;
     padding: 0;
 }
 
-li {
+.coursesCard {
     list-style-type: none;
     width: 100%;
     margin: 20px 0 0;

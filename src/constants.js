@@ -51,6 +51,9 @@ const BUTTON_TEXT = {
 	createAuthor: 'Create author',
 	addAuthor: 'Add author',
 	deleteAuthor: 'Delete author',
+	register: 'Register',
+	login: 'Login',
+	backToCourses: '< Back to courses',
 };
 
 const INPUT_TEXT = {
@@ -59,6 +62,9 @@ const INPUT_TEXT = {
 	enterDescription: 'Enter description',
 	enterAuthorName: 'Enter author name...',
 	enterDuration: 'Enter duration in minutes...',
+	enterName: 'Enter name',
+	enterEmail: 'Enter email',
+	enterPassword: 'Enter password',
 };
 
 const CREATE_COURSE_MODEL = {
@@ -73,6 +79,7 @@ const CREATE_COURSE_MODEL = {
 };
 
 const COURSE_CARD_MODEL = {
+	id: 'Id',
 	authors: 'Authors',
 	duration: 'Duration',
 	created: 'Created',

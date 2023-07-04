@@ -1,0 +1,28 @@
+.regPage {
+    border: solid 2px lightskyblue;
+    padding: 50px auto;
+    margin: 20px;
+}
+
+.regBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.regForm {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login {
+    color: turquoise;
+    font-weight: bold;
+}

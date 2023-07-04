@@ -1,0 +1,28 @@
+.loginPage {
+    border: solid 2px lightskyblue;
+    padding: 80px auto;
+    margin: 20px;
+}
+
+.loginBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 330px;
+    margin: 50px auto;
+}
+
+.loginForm {
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.register {
+    color: turquoise;
+    font-weight: bold;
+}

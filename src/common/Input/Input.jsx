@@ -12,7 +12,7 @@ const Input = ({ id, labelText, placeholderText, onChangeInput }) => {
 				id={id}
 				type='text'
 				placeholder={placeholderText}
-				onChange={(e) => onChangeInput(e.target.value)}
+				onChange={onChangeInput}
 			></input>
 		</div>
 	);

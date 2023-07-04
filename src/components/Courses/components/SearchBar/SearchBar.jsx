@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './SearchBar.css';
 import { INPUT_TEXT, BUTTON_TEXT } from '../../../../constants';
 import { Input } from '../../../../common/Input/Input';

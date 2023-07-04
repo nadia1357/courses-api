@@ -1,0 +1,37 @@
+.courseInfo {
+    width: 94%;
+    border: solid 2px aquamarine;
+    padding: 20px;
+    margin: 20px;
+}
+
+.courseInfoH2 {
+    text-align: center;
+}
+
+.courseBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.courseBlockLeft {
+    width: 55%;
+}
+
+.courseBlockRight {
+    width: 35%;
+}
+
+.authorsList {
+    margin: 0;
+    padding: 0;
+}
+
+.authorsItem {
+    list-style-type: none;
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+}

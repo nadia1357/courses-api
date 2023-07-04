@@ -27,13 +27,18 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "axios": "^1.4.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.9.0",
-    "react-scripts": "^5.0.1"
+    "react-redux": "^8.1.1",
+    "react-router-dom": "^6.11.1",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.1",
+    "save": "^2.9.0",
+    "uuid": "^9.0.0"
   },
   "browserslist": {
     "production": [

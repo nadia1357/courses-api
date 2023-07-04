@@ -1,4 +1,5 @@
 import React from 'react';
+//import { v4 as uuidv4 } from 'uuid';
 
 import './Authors.css';
 
@@ -10,15 +11,15 @@ import {
 
 import { Button } from '../../../../common/Button/Button';
 
-let allAuthors = MOCKED_AUTHORS_LIST;
+const allAuthors = MOCKED_AUTHORS_LIST;
 
 const Authors = () => {
 	return (
 		<div className='allAuthorsBlock'>
 			<h4>{CREATE_COURSE_MODEL.authors}</h4>
-			<ul className='allAuthors'>
+			<ul className='allAuthorsList'>
 				{allAuthors.map((author) => (
-					<li key={author.id}>
+					<li className='authorItem' key={author.id}>
 						<div className='author'>
 							<p>{author.name}</p>
 							<Button text={BUTTON_TEXT.addAuthor} onclick={() => {}} />
