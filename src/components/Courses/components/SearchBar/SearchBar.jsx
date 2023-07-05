@@ -5,7 +5,7 @@ import { INPUT_TEXT, BUTTON_TEXT } from '../../../../constants';
 import { Input } from '../../../../common/Input/Input';
 import { Button } from '../../../../common/Button/Button';
 
-const SearchBar = ({ onChangeSearch }) => {
+export const SearchBar = ({ onChangeSearch }) => {
 	let searchValue = '';
 	const onChangeInput = (inputValue) => {
 		searchValue = inputValue;
@@ -27,4 +27,3 @@ const SearchBar = ({ onChangeSearch }) => {
 		</div>
 	);
 };
-export { SearchBar };

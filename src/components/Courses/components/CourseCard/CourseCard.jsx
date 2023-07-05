@@ -5,7 +5,7 @@ import './CourseCard.css';
 import { BUTTON_TEXT, COURSE_CARD_MODEL } from '../../../../constants';
 import { Button } from '../../../../common/Button/Button';
 
-const CourseCard = ({ course }) => {
+export const CourseCard = ({ course }) => {
 	const navigate = useNavigate();
 	const hour = 60;
 	return (
@@ -41,5 +41,3 @@ const CourseCard = ({ course }) => {
 		</div>
 	);
 };
-
-export { CourseCard };

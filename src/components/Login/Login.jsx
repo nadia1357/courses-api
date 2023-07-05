@@ -8,9 +8,9 @@ import { Input } from '../../common/Input/Input';
 import { Button } from '../../common/Button/Button';
 import { Header } from '../Header/Header';
 import { loginUser } from '../../services';
-import { addUserToStore } from '../../store/user/actionCreators';
+import { addUserToState } from '../../store/user/actionCreators';
 
-const Login = () => {
+export const Login = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -39,7 +39,7 @@ const Login = () => {
 			let result = response.result; // checking if login was done okay
 			let token = result.slice(result.indexOf(' ') + 1);
 			localStorage.setItem('token', token);
-			dispatch(addUserToStore(response.user.name, response.user.email, token));
+			dispatch(addUserToState(response.user.name, response.user.email, token));
 			navigate('/courses');
 		} else {
 			alert('Try to login again');
@@ -88,5 +88,3 @@ const Login = () => {
 		</div>
 	);
 };
-
-export { Login };

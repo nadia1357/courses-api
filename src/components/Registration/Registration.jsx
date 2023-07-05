@@ -8,7 +8,7 @@ import { Button } from '../../common/Button/Button';
 import { Header } from '../Header/Header';
 import { registerUser } from '../../services';
 
-const Registration = () => {
+export const Registration = () => {
 	const navigate = useNavigate();
 
 	const [data, setData] = useState({
@@ -90,5 +90,3 @@ const Registration = () => {
 		</div>
 	);
 };
-
-export { Registration };

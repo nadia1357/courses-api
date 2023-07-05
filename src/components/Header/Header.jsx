@@ -7,9 +7,9 @@ import { Logo } from './components/Logo/Logo.jsx';
 import { Button } from '../../common/Button/Button.jsx';
 import { BUTTON_TEXT } from '../../constants';
 import { getUser } from '../../selectors';
-import { removeUserFromStore } from '../../store/user/actionCreators';
+import { removeUserFromState } from '../../store/user/actionCreators';
 
-const Header = () => {
+export const Header = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const user = useSelector(getUser);
@@ -17,7 +17,7 @@ const Header = () => {
 
 	const logout = () => {
 		localStorage.removeItem('token');
-		dispatch(removeUserFromStore());
+		dispatch(removeUserFromState());
 		navigate('/login');
 	};
 
@@ -37,5 +37,3 @@ const Header = () => {
 		</header>
 	);
 };
-
-export { Header };

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Duration.css';
-
 import { INPUT_TEXT, CREATE_COURSE_MODEL } from '../../../../constants';
-
 import { Input } from '../../../../common/Input/Input';
 
-const Duration = () => {
-	const onChangeInput = () => {};
+export const Duration = ({ addDuration }) => {
+	const [duration, setDuration] = useState('');
+	const onChangeInput = (event) => {
+		setDuration(event.target.value);
+		addDuration(duration);
+	};
 
 	return (
 		<div>
@@ -17,6 +19,7 @@ const Duration = () => {
 					id={CREATE_COURSE_MODEL.duration}
 					placeholderText={INPUT_TEXT.enterDuration}
 					labelText={CREATE_COURSE_MODEL.duration}
+					value={duration}
 					onChangeInput={onChangeInput}
 				/>
 			</div>
@@ -24,5 +27,3 @@ const Duration = () => {
 		</div>
 	);
 };
-
-export { Duration };

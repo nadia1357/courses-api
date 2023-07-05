@@ -1,6 +1,6 @@
 import { userActionTypes } from './actionTypes';
 
-export function addUserToStore(name, email, token) {
+export const addUserToState = (name, email, token) => {
 	const user = {
 		isAuth: true,
 		name: name,
@@ -12,9 +12,9 @@ export function addUserToStore(name, email, token) {
 		type: userActionTypes.ADD_USER,
 		user: user,
 	};
-}
+};
 
-export function removeUserFromStore() {
+export const removeUserFromState = () => {
 	const user = {
 		isAuth: false,
 		name: '',
@@ -26,4 +26,4 @@ export function removeUserFromStore() {
 		type: userActionTypes.REMOVE_USER,
 		user: user,
 	};
-}
+};

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({ id, labelText, placeholderText, onChangeInput }) => {
+export const Input = ({ id, labelText, placeholderText, onChangeInput }) => {
 	return (
 		<div className='inputBlock'>
 			<label className='label' htmlFor={id}>
@@ -17,5 +17,3 @@ const Input = ({ id, labelText, placeholderText, onChangeInput }) => {
 		</div>
 	);
 };
-
-export { Input };
