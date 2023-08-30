@@ -1,6 +1,6 @@
 const authorsInitialState = [];
 
-export const coursesReducer = (state = authorsInitialState, action) => {
+export const authorsReducer = (state = authorsInitialState, action) => {
 	switch (action.type) {
 		case 'ADD_NEW_AUTHOR': {
 			return {

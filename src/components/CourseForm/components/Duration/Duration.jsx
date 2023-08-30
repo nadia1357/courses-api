@@ -4,11 +4,21 @@ import './Duration.css';
 import { INPUT_TEXT, CREATE_COURSE_MODEL } from '../../../../constants';
 import { Input } from '../../../../common/Input/Input';
 
-export const Duration = ({ addDuration }) => {
+export const Duration = ({ addDuration, previousDuration }) => {
+	const hour = 60;
+	let durationOnScreen = '';
+	if (previousDuration) {
+		durationOnScreen =
+			Math.floor(previousDuration / hour) + ':' + (previousDuration % hour);
+	} else {
+		durationOnScreen = '00:00';
+	}
+
 	const [duration, setDuration] = useState('');
 	const onChangeInput = (event) => {
 		setDuration(event.target.value);
 		addDuration(duration);
+		durationOnScreen = Math.floor(duration / hour) + ':' + (duration % hour);
 	};
 
 	return (
@@ -23,7 +33,9 @@ export const Duration = ({ addDuration }) => {
 					onChangeInput={onChangeInput}
 				/>
 			</div>
-			<p className='duration'>{CREATE_COURSE_MODEL.duration}: 00:00 hours</p>
+			<p className='duration'>
+				{CREATE_COURSE_MODEL.duration}: {durationOnScreen} hours
+			</p>
 		</div>
 	);
 };

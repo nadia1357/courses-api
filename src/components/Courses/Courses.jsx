@@ -10,6 +10,7 @@ import { CourseCard } from './components/CourseCard/CourseCard';
 import { Header } from '../Header/Header';
 import { getCourses, getAuthors } from '../../selectors';
 import { getAllCourses, getAllAuthors } from '../../services';
+import { getCoursesFromDB } from '../../store/courses/thunk';
 import { addCoursesToState } from '../../store/courses/actionCreators';
 import { addAuthorsToState } from '../../store/authors/actionCreators';
 
@@ -17,14 +18,18 @@ export const Courses = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const allCoursesFromServer = getAllCourses();
-	dispatch(addCoursesToState(allCoursesFromServer));
+	// let allCoursesFromServer = getAllCourses();
+	// dispatch(addCoursesToState(allCoursesFromServer));
+	// console.log(`allCoursesFromServer ${allCoursesFromServer}`);
 
-	const allAuthorsFromServer = getAllAuthors();
+	let allAuthorsFromServer = getAllAuthors();
 	dispatch(addAuthorsToState(allAuthorsFromServer));
+	console.log(`allAuthorsFromServer ${allAuthorsFromServer}`);
 
 	const coursesFromState = useSelector(getCourses);
+	console.log(`coursesFromState ${coursesFromState}`);
 	const authorsFromState = useSelector(getAuthors);
+	console.log(`authorsFromState ${authorsFromState}`);
 
 	let allCourses = coursesFromState;
 	let allAuthors = authorsFromState;

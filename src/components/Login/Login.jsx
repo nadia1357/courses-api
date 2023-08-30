@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import './Login.css';
 import { INPUT_TEXT, BUTTON_TEXT } from '../../constants';
@@ -8,11 +7,11 @@ import { Input } from '../../common/Input/Input';
 import { Button } from '../../common/Button/Button';
 import { Header } from '../Header/Header';
 import { loginUser } from '../../services';
-import { addUserToState } from '../../store/user/actionCreators';
+import { getUserFromDB } from '../../store/user/thunk';
 
 export const Login = () => {
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	let token = '';
 
 	const [form, setForm] = useState({
 		email: '',
@@ -35,14 +34,15 @@ export const Login = () => {
 		};
 
 		const response = await loginUser(user);
-		if (response.result) {
-			let result = response.result; // checking if login was done okay
-			let token = result.slice(result.indexOf(' ') + 1);
-			localStorage.setItem('token', token);
-			dispatch(addUserToState(response.user.name, response.user.email, token));
+		let result = response.result;
+		token = result.slice(result.indexOf(' ') + 1);
+		localStorage.setItem('token', token);
+
+		if (localStorage.getItem('token')) {
+			getUserFromDB();
 			navigate('/courses');
 		} else {
-			alert('Try to login again');
+			console.log('Try to login again');
 			navigate('/login');
 		}
 	};

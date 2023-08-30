@@ -3,6 +3,7 @@ const userInitialState = {
 	name: '',
 	email: '',
 	token: '',
+	role: '',
 };
 
 export const userReducer = (state = userInitialState, action) => {

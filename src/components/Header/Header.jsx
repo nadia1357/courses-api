@@ -1,23 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './Header.css';
 import { Logo } from './components/Logo/Logo.jsx';
 import { Button } from '../../common/Button/Button.jsx';
 import { BUTTON_TEXT } from '../../constants';
 import { getUser } from '../../selectors';
-import { removeUserFromState } from '../../store/user/actionCreators';
+import { logoutUser } from '../../store/user/thunk';
 
 export const Header = () => {
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
 	const user = useSelector(getUser);
 	const showUserNameAndLogout = user.isAuth;
 
 	const logout = () => {
+		logoutUser();
 		localStorage.removeItem('token');
-		dispatch(removeUserFromState());
 		navigate('/login');
 	};
 

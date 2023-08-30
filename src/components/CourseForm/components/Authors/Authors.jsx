@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 //import { v4 as uuidv4 } from 'uuid';
 
 import './Authors.css';
@@ -7,15 +7,29 @@ import { BUTTON_TEXT, CREATE_COURSE_MODEL } from '../../../../constants';
 import { Button } from '../../../../common/Button/Button';
 import { getAuthors } from '../../../../selectors';
 
-const Authors = ({ addAllAuthors }) => {
+export const Authors = ({
+	addAllAuthors,
+	deleteChosenAuthor,
+	courseAuthors,
+}) => {
 	const authorsFromState = useSelector(getAuthors);
-	const chosenAuthors = [];
+	let chosenAuthors = courseAuthors;
 	let showChosenAuthors = false;
+
+	if (courseAuthors !== []) {
+		showChosenAuthors = true;
+	}
 
 	const addAuthorToList = (author) => {
 		chosenAuthors.push(author);
 		showChosenAuthors = true;
 		addAllAuthors(author);
+	};
+
+	const deleteAuthorFromList = (author) => {
+		const authorsWithoutDeleted = chosenAuthors.filter((el) => el !== author);
+		chosenAuthors = authorsWithoutDeleted;
+		deleteChosenAuthor(chosenAuthors);
 	};
 
 	return (
@@ -40,7 +54,13 @@ const Authors = ({ addAllAuthors }) => {
 				<ul className='chosenAuthorsList'>
 					{chosenAuthors.map((author) => (
 						<li className='authorItem' key={author.id}>
-							{author.name}
+							<div className='author'>
+								<p>{author.name}</p>
+								<Button
+									text={BUTTON_TEXT.deleteAuthor}
+									onclick={deleteAuthorFromList(author)}
+								/>
+							</div>
 						</li>
 					))}
 				</ul>
@@ -48,5 +68,3 @@ const Authors = ({ addAllAuthors }) => {
 		</div>
 	);
 };
-
-export { Authors };
