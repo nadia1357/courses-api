@@ -5,14 +5,14 @@ export const coursesReducer = (state = coursesInitialState, action) => {
 		case 'ADD_NEW_COURSE': {
 			return {
 				...state,
-				courses: state.courses.push(action.course),
+				courses: state.courses.push(action.payload),
 			};
 		}
 
 		case 'UPDATE_COURSE': {
 			const updatedCourses = state.courses.map((course) => {
-				if (course.id === action.course.id) {
-					return action.course;
+				if (course.id === action.payload.id) {
+					return action.payload;
 				}
 				return course;
 			});
@@ -24,7 +24,7 @@ export const coursesReducer = (state = coursesInitialState, action) => {
 
 		case 'DELETE_COURSE': {
 			const updatedCourses = state.courses.filter(
-				(course) => course.id !== action.course.id
+				(course) => course.id !== action.payload.id
 			);
 			return {
 				...state,
@@ -32,10 +32,10 @@ export const coursesReducer = (state = coursesInitialState, action) => {
 			};
 		}
 
-		case 'GET_COURSES': {
+		case 'ADD_COURSES_TO_STATE': {
 			return {
 				...state,
-				courses: action.courses,
+				courses: action.payload,
 			};
 		}
 

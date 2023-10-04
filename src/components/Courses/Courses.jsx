@@ -13,27 +13,33 @@ import { getAllCourses, getAllAuthors } from '../../services';
 import { getCoursesFromDB } from '../../store/courses/thunk';
 import { addCoursesToState } from '../../store/courses/actionCreators';
 import { addAuthorsToState } from '../../store/authors/actionCreators';
+import { MOCKED_COURSES_LIST } from '../../constants';
 
 export const Courses = () => {
+	let allCourses = [];
+
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	// let allCoursesFromServer = getAllCourses();
-	// dispatch(addCoursesToState(allCoursesFromServer));
-	// console.log(`allCoursesFromServer ${allCoursesFromServer}`);
+	const coursesFromState = useSelector(getCourses);
+	const authorsFromState = useSelector(getAuthors);
+
+	dispatch(getCoursesFromDB());
+
+	console.log('coursesFromState', coursesFromState);
+	if (coursesFromState.length >= 1) {
+		allCourses = coursesFromState.courses;
+	} else {
+		allCourses = MOCKED_COURSES_LIST;
+	}
+	console.log('allCourses', allCourses);
 
 	let allAuthorsFromServer = getAllAuthors();
 	dispatch(addAuthorsToState(allAuthorsFromServer));
 	console.log(`allAuthorsFromServer ${allAuthorsFromServer}`);
-
-	const coursesFromState = useSelector(getCourses);
-	console.log(`coursesFromState ${coursesFromState}`);
-	const authorsFromState = useSelector(getAuthors);
 	console.log(`authorsFromState ${authorsFromState}`);
 
-	let allCourses = coursesFromState;
 	let allAuthors = authorsFromState;
-
 	for (let i = 0; i < coursesFromState.length; i++) {
 		let authors = coursesFromState[i].authors.map((author) => {
 			allAuthors.forEach((item) => {
@@ -46,7 +52,7 @@ export const Courses = () => {
 		allCourses[i].authorsInString = authors.join(', ');
 	}
 
-	const [choosenCourses, setChoosenCourses] = useState(allCourses);
+	const [choosenCourses, setChoosenCourses] = useState(MOCKED_COURSES_LIST);
 
 	const showChoosenCourses = (choosenCourses) => {
 		setChoosenCourses(choosenCourses);
